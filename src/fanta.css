@@ -23,6 +23,18 @@
     --color-primary: #e2e8f0;
     --color-accent-light: #6366f1;
   }
+  .tab-button {
+    color: white;
+}
+.tab-button .count {
+    color: white;
+}
+
+.tabs {
+    background-color: var(--background-secondary);
+    color: white;
+}
+
 }
 
 * {
