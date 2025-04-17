@@ -84,7 +84,7 @@ function App() {
 
   const filterTodosList = selectedTab === 'All'
     ? todos
-    : selectedTab === 'Completed'
+    : selectedTab === 'Completed '
     ? todos.filter(todo => todo.complete)
     : todos.filter(todo => !todo.complete);
 
