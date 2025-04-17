@@ -1,30 +1,20 @@
-import { TodoCard } from "./TodoCard";
+import React from 'react';
+import { TodoCard } from './TodoCard'; // Import TodoCard component
 
 export function TodoList(props) {
-    const { todos, selectedTab } = props
-
-
-    const filterTodosList = selectedTab === 'All' ?
-        todos :
-        selectedTab === 'Completed' ?
-            todos.filter(val => val.complete) :
-            todos.filter(val => !val.complete)
+    const { todos, handleCompleteTodo, handleDeleteTodo } = props;
 
     return (
         <>
-            {filterTodosList.map((todo, todoIndex) => {
-                const tempTodoIndex = todos.findIndex(val => val.input == todo.input)
-                console.log(tempTodoIndex)
-                // finding an index like this has it's limitations and in later courses we learn a more sophisticated way of doing it (the limitation is that the code might misbehave if you have two todos with the exact same text :) See if you can figure out why!)
-                return (
-                    <TodoCard
-                        key={todoIndex}
-                        {...props}
-                        todoIndex={tempTodoIndex}
-                        todo={todo} />
-                )
-            })}
-
+            {todos.map((todo, todoIndex) => (
+                <TodoCard
+                    key={todo.id} // Use unique key (task ID)
+                    todo={todo}
+                    todoIndex={todoIndex}
+                    handleCompleteTodo={handleCompleteTodo}
+                    handleDeleteTodo={handleDeleteTodo}
+                />
+            ))}
         </>
-    )
+    );
 }
