@@ -29,7 +29,7 @@ function App() {
   
     setTimeout(() => {
       if (Notification.permission === 'granted') {
-        const notification = new Notification('⏰ Task Reminder', {
+        const notification = new Notification('Task Reminder', {
           body: `Don't forget: ${task} is due now!`,
           icon: '/reminder-icon.png', // optional
           data: { url: "https://dailydoes.netlify.app/" }, 
