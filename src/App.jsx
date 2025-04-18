@@ -2,6 +2,7 @@ import { Header } from "./components/Header";
 import { Tabs } from "./components/Tabs";
 import { TodoInput } from "./components/TodoInput";
 import { TodoList } from "./components/TodoList";
+import { Footer } from "./components/footer"; 
 
 import { useState, useEffect } from 'react';
 
@@ -99,6 +100,7 @@ function App() {
         todos={filterTodosList}
       />
       <TodoInput handleAddTodo={handleAddTodo} />
+      <Footer/>
     </>
   );
 }
