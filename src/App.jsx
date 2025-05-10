@@ -23,7 +23,7 @@ function App() {
     const [hours, minutes] = time.split(':');
     const now = new Date();
     const reminderTime = new Date();
-    reminderTime.setHours(hours, minutes, 0, 0);
+    reminderTime.setHours(hours,minutes, 0, 0);
   
     const delay = reminderTime - now;
     if (delay <= 0) return;
@@ -85,7 +85,7 @@ function App() {
 
   const filterTodosList = selectedTab === 'All'
     ? todos
-    : selectedTab === 'Completed'
+    : selectedTab === 'Completed '
     ? todos.filter(todo => todo.complete)
     : todos.filter(todo => !todo.complete);
 
